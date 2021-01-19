@@ -1,0 +1,218 @@
+@media screen and (min-width: 900px) {
+  article {
+    padding: 1rem 3rem;
+  }
+}
+
+@supports (display: flex) {
+  @media screen and (min-width: 900px) {
+    article {
+      display: flex;
+    }
+  }
+}
+
+body {
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif}
+
+h1 {
+  font-size: 1.1rem;
+  font-weight: 250;
+  margin-bottom: 0;
+  display: inline;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.weather-app-wrapper {
+  max-width: 40.5rem;
+  margin-top: 2rem;
+  display: block;
+}
+
+.weather-app {
+  height: 43rem;
+  color: rgb(255, 255, 255);
+  padding: 1.25rem;
+  border: 0.06rem solid #dadde1;
+  border-radius: 1.25rem;
+  background-color: rgb(14, 114, 208);
+}
+
+.form-control {
+  background: white;
+  margin-top: 0.1rem;
+}
+
+.btn {
+  background: rgba(255, 255, 255, 0.193);
+  color: white;
+  border: 0.15rem solid rgba(255, 255, 255, 0.193);
+}
+
+.btn:hover {
+  background: rgba(14, 114, 208, 0.33);
+  color: white;
+  border: 0.15rem solid rgba(255, 255, 255, 0.193);
+}
+
+.overview {
+  margin-bottom: 1.25rem;
+}
+
+.place {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: -0.5rem;
+}
+
+.place h1 {
+  font-weight: 400;
+}
+
+.main-weather-description {
+  font-size: 1rem;
+  font-weight: 250;
+  line-height: 1.25rem;
+  text-transform: capitalize;
+  position: relative;
+  top: 0.5rem;
+}
+
+.description {
+  font-size: 0.85rem;
+}
+
+.main-weather-temp {
+  display: block;
+  margin: 1rem auto;
+}
+
+.main-weather-temp img {
+  width: 5rem;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 2rem;
+}
+
+.main-temp-degrees {
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  font-size: 6rem;
+  font-weight: 200;
+  text-align: center;
+  position: relative;
+  right: -1rem;
+  top: 2rem;
+}
+
+.main-temp-units {
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  position: relative;
+  right: -1.5rem;
+  bottom: -4rem;
+}
+
+.main-temp-units .active {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  cursor: default;
+}
+
+.main-temp-units .active:hover {
+  text-decoration: none;
+}
+
+.main-temp-units a {
+  text-decoration: none;
+  color: rgb(211, 211, 211);
+}
+
+.main-weather-proprieties {
+  font-size: 0.8rem;
+  font-weight: 300;
+  line-height: 1.4rem;
+  text-align: center;
+  position: relative;
+  top: 0.2rem;
+  display: inline;
+  padding: 1rem;
+}
+
+.proprieties-icon {
+  width: 1.2rem;
+}
+
+.feels-icon {
+  width: 0.6rem;
+  margin-right: 0.4rem;
+}
+
+.properties {
+  position: relative;
+  bottom: -0.35rem;
+}
+
+#max-temp {
+  font-weight: bold;
+}
+
+.w-forecast {
+  margin-top: 0.6rem;
+  position: relative;
+  bottom: 7rem;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.w-forecast h3 {
+  color: rgb(255, 255, 255);
+  font-size: 0.8rem;
+  font-weight: 400;
+  text-align: center;
+  position: relative;
+  bottom: 0.5rem;
+}
+
+.w-forecast img {
+  display: block;
+  margin: 0 auto;
+  width: 1.5rem;
+}
+
+.w-forecast-temp {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 0.8rem;
+  font-weight: 500;
+  height: auto;
+  white-space: nowrap;
+  position: absolute;
+  right: 1rem;
+  top: 4rem;
+}
+
+.footer {
+  color: rgb(62, 150, 233);
+  font-size: 0.8rem;
+  position: relative;
+  bottom: 1rem;
+}
+
+.footer a {
+  color: rgb(62, 150, 233);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footnote {
+  text-align: center;
+  line-height: 1rem;
+}
