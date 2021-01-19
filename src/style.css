@@ -179,10 +179,9 @@ ul {
   font-size: 0.8rem;
   font-weight: 500;
   height: auto;
-  white-space: nowrap;
   position: absolute;
-  right: 1rem;
-  top: 4rem;
+  top: 3.5rem;
+  left: 2rem;
 }
 
 .footer {
