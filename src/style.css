@@ -39,6 +39,7 @@ ul {
   background: rgba(255, 255, 255, 0.193);
   color: white;
   border: 0.15rem solid rgba(255, 255, 255, 0.193);
+  display: inline-block;
 }
 
 .btn:hover {
@@ -59,6 +60,10 @@ ul {
 
 .place h1 {
   font-weight: 400;
+}
+
+.main-weather-view {
+  margin-top: 1rem;
 }
 
 .main-weather-description {
@@ -83,8 +88,6 @@ ul {
   width: 5rem;
   display: block;
   margin: 0 auto;
-  position: relative;
-  top: 2rem;
 }
 
 .main-temp-degrees {
@@ -92,18 +95,14 @@ ul {
   color: rgb(255, 255, 255);
   font-size: 6rem;
   font-weight: 200;
-  text-align: center;
-  position: relative;
-  right: -1rem;
-  top: 2rem;
+  margin-left: 2.5rem;
 }
 
 .main-temp-units {
   color: rgb(255, 255, 255);
   font-size: 1.2rem;
-  position: relative;
-  right: -1.5rem;
-  bottom: -4rem;
+  margin-top: 2rem;
+  margin-left: 0.5rem;
 }
 
 .main-temp-units .active {
@@ -126,10 +125,13 @@ ul {
   font-weight: 300;
   line-height: 1.4rem;
   text-align: center;
-  position: relative;
-  top: 0.2rem;
   display: inline;
-  padding: 1rem;
+  white-space: nowrap;
+  align-items: center;
+}
+
+.weather-proprieties {
+  margin-top: 1rem;
 }
 
 .proprieties-icon {
@@ -139,11 +141,6 @@ ul {
 .feels-icon {
   width: 0.6rem;
   margin-right: 0.4rem;
-}
-
-.properties {
-  position: relative;
-  bottom: -0.35rem;
 }
 
 #max-temp {
@@ -156,6 +153,7 @@ ul {
   bottom: 7rem;
   margin-right: 0.5rem;
   margin-left: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .w-forecast h3 {
@@ -188,9 +186,8 @@ ul {
 
 .footer {
   color: rgb(62, 150, 233);
-  font-size: 0.8rem;
-  position: relative;
-  bottom: 1rem;
+  margin-bottom: 1rem;
+  margin-top: -2rem;
 }
 
 .footer a {
@@ -200,6 +197,8 @@ ul {
 }
 
 .footnote {
+  font-size: 0.7rem;
+  font-weight: 400;
   text-align: center;
   line-height: 1rem;
 }

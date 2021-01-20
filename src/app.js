@@ -74,44 +74,48 @@ function awsomeHours (timestamp, timezone) {
 
 
 function displayTemperature(response) {
-  
   celsiusTemp = response.data.main.temp;
-
   tempElement.innerHTML = Math.round(celsiusTemp);
   cityElement.innerHTML = response.data.name;
-  countryElement.innerHTML = response.data.sys.country
+  countryElement.innerHTML = response.data.sys.country;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
-  dateElement.innerHTML = awsomeHours(response.data.dt * 1000, response.data.timezone / 3600);
+  dateElement.innerHTML = awsomeHours(response.data.dt * 1000,response.data.timezone / 3600);
   timeUpdateElement.innerHTML = formatHours(response.data.dt * 1000);
-  iconElement.setAttribute("src", "icons/" + response.data.weather[0].icon + ".png");
+  iconElement.setAttribute(
+    "src",
+    "icons/" + response.data.weather[0].icon + ".png"
+  );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  axios
+    .get(
+      apiEndpoint + 
+      "/data/2.5/onecall?lat=" + response.data.coord.lat + 
+      "&lon=" + response.data.coord.lon + 
+      "&exclude=current,minutely,hourly,alerts" + apiQ
+    )
+    .then(function (response) {
+      document.querySelectorAll(".day-forecast")
+        .forEach(function (element, index) {
+          let day = new Date(response.data.daily[index + 1].dt * 1000);
+          element.querySelector(".forecast-date").innerHTML = formatWeekDate(day);
+          element.querySelector(".max-temp").innerHTML = Math.round(response.data.daily[index].temp.max);
+          element.querySelector(".min-temp").innerHTML = Math.round(response.data.daily[index].temp.min);
+          element
+            .querySelector(".forecast-img")
+            .setAttribute(
+              "src",
+              "icons/" + response.data.daily[index].weather[0].icon + ".png"
+            );
+        });
+    });
 }
 
-function search(city) {
-  //let apiUrl = apiEndpoint + "/data/2.5/weather?q=" + city + apiQ;
-  axios.get(apiEndpoint + "/data/2.5/weather?q=" + city + apiQ).then(displayTemperature);
-  
-  
-  //apiUrl = apiEndpoint + "/data/2.5/forecast?q=" + city + apiQ;
-  axios.get(apiEndpoint + "/data/2.5/forecast?q=" + city + apiQ).then(function(response) {
-    document.querySelectorAll(".day-forecast").forEach(function(element, index) {
-      let day = new Date(response.data.list[index].dt_txt);
-      element.querySelector(".forecast-date").innerHTML = formatWeekDate(day);
-      element.querySelector(".max-temp").innerHTML = Math.round(response.data.list[index].main.temp_max);
-      element.querySelector(".min-temp").innerHTML = Math.round(response.data.list[index].main.temp_min);
-      element.querySelector(".forecast-img").
-      setAttribute(
-        "src",
-        "icons/" + 
-        response.data.list[index].weather[0].icon +
-        ".png"
-      );
-    });
-  });
 
+function search(city) {
+  axios.get(apiEndpoint + "/data/2.5/weather?q=" + city + apiQ).then(displayTemperature);
 }
 
 function showPosition(position) {
