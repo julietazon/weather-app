@@ -120,7 +120,7 @@ ul {
   color: rgb(211, 211, 211);
 }
 
-.main-weather-proprieties {
+.main-weather-properties {
   font-size: 0.8rem;
   font-weight: 300;
   line-height: 1.4rem;
@@ -130,11 +130,11 @@ ul {
   align-items: center;
 }
 
-.weather-proprieties {
+.weather-properties {
   margin-top: 1rem;
 }
 
-.proprieties-icon {
+.properties-icon {
   width: 1.2rem;
 }
 
